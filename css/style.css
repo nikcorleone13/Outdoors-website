@@ -12,13 +12,17 @@ Dark green: #28b485
     box-sizing: border-box;
 }
 
+html{
+    font-size: 62.5%; /*To help scale the fonts regularly. We need 10px os we divide 100% by 16 which is 10/16 in terms of percentage*/
+}
+
 body{
     font-family: "Lato", sans-serif;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1.6rem;
     line-height: 1.7;
     color: #777;
-    padding: 30px; /*Includes the white padding around the whole body on all 4 sides*/
+    padding: 3rem; /*Includes the white padding around the whole body on all 4 sides*/
 }
 
 
@@ -40,11 +44,11 @@ body{
 }
 .logo-box{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;;
+    left: 4rem;
 }
 .logo{
-        height: 35px;
+        height: 3.5rem;;
 }
 .text-box{
     position: absolute;
@@ -60,13 +64,13 @@ body{
     text-transform: uppercase;
 
     backface-visibility: hidden; /*Ill-effects after animations are done make it look bad.So it is hidden*/
-    margin: 60px;
+    margin: 6rem;
 }
 .heading-primary-main{
     display: block; /*span elements are inlilne elements by default and we make them block because*/
-    font-size: 60px;/*they take the full 100% of the width*/
+    font-size: 6rem;/*they take the full 100% of the width*/
     font-weight: 400;
-    letter-spacing: 35px;
+    letter-spacing: 3.5rem;
 
     animation-name: movefromLeft;
     animation-duration: 2s;
@@ -74,9 +78,9 @@ body{
 }
 .heading-primary-sub{
     display: block;
-    font-size: 25px;
+    font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: 14px; /*Space out the letters to make them equal to the main heading*/
+    letter-spacing: 1.5rem; /*Space out the letters to make them equal to the main heading*/
     animation-name: movefromRight;
     animation-duration: 2s;
     animation-timing-function: ease-out;
@@ -86,10 +90,10 @@ body{
 @keyframes movefromLeft{
     0%{
         opacity: 0;
-        transform: translateX(-100px); /*To let it stay 100pixels backward*/
+        transform: translateX(-10rem); /*To let it stay 100pixels backward*/
     }
     80%{
-        transform: translateX(10px); /*This would mean that after 80% there is additional 10px towards right.
+        transform: translateX(1rem); /*This would mean that after 80% there is additional 10px towards right.
                                         this would mean that after 100% it would add an effect of going forward and coming back*/
     }
     100%{
@@ -99,10 +103,10 @@ body{
 @keyframes movefromRight{
     0%{
         opacity: 0;
-        transform: translateX(100px); 
+        transform: translateX(10rem); 
     }
     80%{
-        transform: translateX(-10px);
+        transform: translateX(-1rem);
     }
     100%{
         transform: translateX(0); 
@@ -112,20 +116,21 @@ body{
 .btn:visited{
     text-transform: uppercase;
     text-decoration: none;
-    padding: 15px 40px;
+    padding: 1.5rem 4rem;
     display: inline-block; /*It is an inline element so it will be treated as a text and not a box*/
-    border-radius: 100px;
+    border-radius: 10rem;
     transition: all .2s;
     position: relative;
+    font-size: 2rem;
 }
 .btn:hover{
     transform: translateY(-3px); /*Button moves up 3px to show that it is active*/
-    box-shadow: 0 10px 20px rgba(0,0,0, 0.2); /*0 is for x direction shadow and y is for below. 
+    box-shadow: 0 1rem 2rem rgba(0,0,0, 0.2); /*0 is for x direction shadow and y is for below. 
                                                 20px assigned is the height of the shadow and the last value in the rgba is the opacity of black color*/
 }
 .btn:active{
     transform: translateY(-1px); /*To show that the button is clicked and a slight downward action is shown*/
-    box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
+    box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.2);
 }
 .btn-white{
     background-color: #fff;
@@ -154,7 +159,7 @@ background-color: white;
 @keyframes movefromBottom{
     0%{
         opacity: 0;
-        transform: translateY(30px); 
+        transform: translateY(3rem); 
     }
     100%{
         transform: translateX(0); 
