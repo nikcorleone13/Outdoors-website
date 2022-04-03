@@ -42,15 +42,15 @@ body{
         Checkout https://bennettfeely.com/clippy/ for more shapes and figures*/
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*Using the vh property because if the size changes the shope remains intact*/
 }
-.logo-box{
+.header__logo-box{
     position: absolute;
     top: 4rem;;
     left: 4rem;
 }
-.logo{
+.header__logo{
         height: 3.5rem;;
 }
-.text-box{
+.header__text-box{
     position: absolute;
     top: 40%; /*both top and left arein relation to the parent element so it starts after 40% from the top*/
     left: 50%;/*and 50% space is left on the left hand side and then the container starts*/
@@ -66,7 +66,7 @@ body{
     backface-visibility: hidden; /*Ill-effects after animations are done make it look bad.So it is hidden*/
     margin: 6rem;
 }
-.heading-primary-main{
+.heading-primary--main{
     display: block; /*span elements are inlilne elements by default and we make them block because*/
     font-size: 6rem;/*they take the full 100% of the width*/
     font-weight: 400;
@@ -76,7 +76,7 @@ body{
     animation-duration: 2s;
     animation-timing-function: ease-out;
 }
-.heading-primary-sub{
+.heading-primary--sub{
     display: block;
     font-size: 2.5rem;
     font-weight: 700;
@@ -132,7 +132,7 @@ body{
     transform: translateY(-1px); /*To show that the button is clicked and a slight downward action is shown*/
     box-shadow: 0 .5rem 1rem rgba(0,0,0, 0.2);
 }
-.btn-white{
+.btn--white{
     background-color: #fff;
     color: #777;
 }
@@ -149,7 +149,7 @@ body{
     z-index: -1; /*Behind the button*/
     transition: all 0.4s ;
 }
-.btn-white::after{
+.btn--white::after{
 background-color: white;
 }
 .btn:hover::after{
@@ -165,7 +165,7 @@ background-color: white;
         transform: translateX(0); 
     }
 }
-.btn-animated{
+.btn--animated{
     animation: movefromBottom 1s ease-out;
     animation-fill-mode: backwards;
 }
