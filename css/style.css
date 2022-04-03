@@ -53,12 +53,14 @@ body{
     /* background-color: red; */
     transform: translate(-50%, -50%); /*VVIP-It is in relation to the element itself. This is to reduce the 50% of the x and y axis width because the left top corner of this box is */
     /* exactly at the center of the main div and we are reducing the half of the box to make it in center*/
+    text-align: center; /*This is done to make the inline elements of the div at centre, which is basically the button*/
 }
 .heading-primary{
     color: #fff;
     text-transform: uppercase;
 
     backface-visibility: hidden; /*Ill-effects after animations are done make it look bad.So it is hidden*/
+    margin: 60px;
 }
 .heading-primary-main{
     display: block; /*span elements are inlilne elements by default and we make them block because*/
@@ -74,8 +76,10 @@ body{
     display: block;
     font-size: 25px;
     font-weight: 700;
-    letter-spacing: 14.6px; /*Space out the letters to make them equal to the main heading*/
-    animation-name: movefromRight 2s ease-out;
+    letter-spacing: 14px; /*Space out the letters to make them equal to the main heading*/
+    animation-name: movefromRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out;
 }
 
 /***Animations***/
@@ -103,4 +107,60 @@ body{
     100%{
         transform: translateX(0); 
     }
+}
+.btn:link, /*To make the visited link look just like unvisited*/
+.btn:visited{
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 15px 40px;
+    display: inline-block; /*It is an inline element so it will be treated as a text and not a box*/
+    border-radius: 100px;
+    transition: all .2s;
+    position: relative;
+}
+.btn:hover{
+    transform: translateY(-3px); /*Button moves up 3px to show that it is active*/
+    box-shadow: 0 10px 20px rgba(0,0,0, 0.2); /*0 is for x direction shadow and y is for below. 
+                                                20px assigned is the height of the shadow and the last value in the rgba is the opacity of black color*/
+}
+.btn:active{
+    transform: translateY(-1px); /*To show that the button is clicked and a slight downward action is shown*/
+    box-shadow: 0 5px 10px rgba(0,0,0, 0.2);
+}
+.btn-white{
+    background-color: #fff;
+    color: #777;
+}
+/***Additonal button effect.Pops out from the bottom.Optional***/
+.btn::after{
+    content: ""; /*Mandatory to specify the contents*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*Behind the button*/
+    transition: all 0.4s ;
+}
+.btn-white::after{
+background-color: white;
+}
+.btn:hover::after{
+    transform: scaleX(1.5) scaleY(1.5); /*To increase the size of the button on hover state*/ 
+    opacity: 0; /*Sets to invisible*/
+}
+@keyframes movefromBottom{
+    0%{
+        opacity: 0;
+        transform: translateY(30px); 
+    }
+    100%{
+        transform: translateX(0); 
+    }
+}
+.btn-animated{
+    animation: movefromBottom 1s ease-out;
+    animation-fill-mode: backwards;
 }
