@@ -1,0 +1,25 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass":"node-sass SASS/main.scss CSS/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nikcorleone13/Outdoors-website.git"
+  },
+  "keywords": [
+    ""
+  ],
+  "author": "Nikhil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nikcorleone13/Outdoors-website/issues"
+  },
+  "homepage": "https://github.com/nikcorleone13/Outdoors-website#readme",
+  "devDependencies": {
+    "node-sass": "^7.0.1"
+  }
+}
