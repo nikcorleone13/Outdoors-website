@@ -1,55 +1,24 @@
-/*Universal Setting*/
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; }
+  box-sizing: inherit; }
 
 html {
   font-size: 62.5%;
   /*To help scale the fonts regularly. We need 10px os we divide 100% by 16 which is 10/16 in terms of percentage*/ }
 
 body {
+  box-sizing: border-box; }
+
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.7;
-  color: #777;
   padding: 3rem;
   /*Includes the white padding around the whole body on all 4 sides*/ }
-
-/***************HEADER*******************/
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
-  background-size: cover;
-  background-position: top;
-  /*Top stays the same when the size is changed*/
-  position: relative;
-  /*To make the wedge of cutting the header we need to use the clip-path property. 
-        Checkout https://bennettfeely.com/clippy/ for more shapes and figures*/
-  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
-  /*Using the vh property because if the size changes the shope remains intact*/ }
-
-.header__logo-box {
-  position: absolute;
-  top: 4rem;
-  left: 4rem; }
-
-.header__logo {
-  height: 3.5rem; }
-
-.header__text-box {
-  position: absolute;
-  top: 40%;
-  /*both top and left arein relation to the parent element so it starts after 40% from the top*/
-  left: 50%;
-  /*and 50% space is left on the left hand side and then the container starts*/
-  /* background-color: red; */
-  transform: translate(-50%, -50%);
-  /*VVIP-It is in relation to the element itself. This is to reduce the 50% of the x and y axis width because the left top corner of this box is */
-  /* exactly at the center of the main div and we are reducing the half of the box to make it in center*/
-  text-align: center;
-  /*This is done to make the inline elements of the div at centre, which is basically the button*/ }
 
 .heading-primary {
   color: #fff;
@@ -57,29 +26,26 @@ body {
   backface-visibility: hidden;
   /*Ill-effects after animations are done make it look bad.So it is hidden*/
   margin: 6rem; }
+  .heading-primary--main {
+    display: block;
+    /*span elements are inlilne elements by default and we make them block because*/
+    font-size: 6rem;
+    /*they take the full 100% of the width*/
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation-name: movefromLeft;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1.5rem;
+    /*Space out the letters to make them equal to the main heading*/
+    animation-name: movefromRight;
+    animation-duration: 2s;
+    animation-timing-function: ease-out; }
 
-.heading-primary--main {
-  display: block;
-  /*span elements are inlilne elements by default and we make them block because*/
-  font-size: 6rem;
-  /*they take the full 100% of the width*/
-  font-weight: 400;
-  letter-spacing: 3.5rem;
-  animation-name: movefromLeft;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; }
-
-.heading-primary--sub {
-  display: block;
-  font-size: 2.5rem;
-  font-weight: 700;
-  letter-spacing: 1.5rem;
-  /*Space out the letters to make them equal to the main heading*/
-  animation-name: movefromRight;
-  animation-duration: 2s;
-  animation-timing-function: ease-out; }
-
-/***Animations***/
 @keyframes movefromLeft {
   0% {
     opacity: 0;
@@ -102,8 +68,18 @@ body {
   100% {
     transform: translateX(0); } }
 
-.btn:link,
-.btn:visited {
+@keyframes movefromBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem); }
+  100% {
+    transform: translateX(0); } }
+
+.btn--animated {
+  animation: movefromBottom 1s ease-out;
+  animation-fill-mode: backwards; }
+
+.btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
   padding: 1.5rem 4rem;
@@ -119,7 +95,12 @@ body {
   /*Button moves up 3px to show that it is active*/
   box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2);
   /*0 is for x direction shadow and y is for below. 
-                                                20px assigned is the height of the shadow and the last value in the rgba is the opacity of black color*/ }
+                                                    20px assigned is the height of the shadow and the last value in the rgba is the opacity of black color*/ }
+  .btn:hover::after {
+    transform: scaleX(1.5) scaleY(1.5);
+    /*To increase the size of the button on hover state*/
+    opacity: 0;
+    /*Sets to invisible*/ }
 
 .btn:active {
   transform: translateY(-1px);
@@ -128,39 +109,53 @@ body {
 
 .btn--white {
   background-color: #fff;
-  color: #777; }
+  /***Additonal button effect.Pops out from the bottom.Optional***/ }
+  .btn--white::after {
+    background-color: #fff; }
+  .btn--white::after {
+    content: "";
+    /*Mandatory to specify the contents*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /*Behind the button*/
+    transition: all .4s; }
 
-/***Additonal button effect.Pops out from the bottom.Optional***/
-.btn::after {
-  content: "";
-  /*Mandatory to specify the contents*/
-  display: inline-block;
-  height: 100%;
-  width: 100%;
-  border-radius: 100px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  /*Behind the button*/
-  transition: all 0.4s; }
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.8), rgba(40, 180, 133, 0.8)), url(../img/hero.jpg);
+  background-size: cover;
+  background-position: top;
+  /*Top stays the same when the size is changed*/
+  position: relative;
+  /*To make the wedge of cutting the header we need to use the clip-path property. 
+        Checkout https://bennettfeely.com/clippy/ for more shapes and figures*/
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  /*Using the vh property because if the size changes the shope remains intact*/ }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    /*both top and left arein relation to the parent element so it starts after 40% from the top*/
+    left: 50%;
+    /*and 50% space is left on the left hand side and then the container starts*/
+    /* background-color: red; */
+    transform: translate(-50%, -50%);
+    /*VVIP-It is in relation to the element itself. This is to reduce the 50% of the x and y axis width because the left top corner of this box is */
+    /* exactly at the center of the main div and we are reducing the half of the box to make it in center*/
+    text-align: center;
+    /*This is done to make the inline elements of the div at centre, which is basically the button*/ }
 
-.btn--white::after {
-  background-color: white; }
-
-.btn:hover::after {
-  transform: scaleX(1.5) scaleY(1.5);
-  /*To increase the size of the button on hover state*/
-  opacity: 0;
-  /*Sets to invisible*/ }
-
-@keyframes movefromBottom {
-  0% {
-    opacity: 0;
-    transform: translateY(3rem); }
-  100% {
-    transform: translateX(0); } }
-
-.btn--animated {
-  animation: movefromBottom 1s ease-out;
-  animation-fill-mode: backwards; }
+/*Universal Setting are going udner base settings*/
+/**HEADER has gone to layout and its heading properties have gone to the typography**/
+/***Animations have gone to animations***/

@@ -1,0 +1,15 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%; /*To help scale the fonts regularly. We need 10px os we divide 100% by 16 which is 10/16 in terms of percentage*/
+}
+
+body {
+    box-sizing: border-box;
+}

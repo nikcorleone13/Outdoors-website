@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "compile:sass":"node-sass SASS/main.scss CSS/style.css"
+    "compile:sass": "node-sass SASS/main.scss CSS/style.css -w"
   },
   "repository": {
     "type": "git",
@@ -21,5 +21,9 @@
   "homepage": "https://github.com/nikcorleone13/Outdoors-website#readme",
   "devDependencies": {
     "node-sass": "^7.0.1"
+  },
+  "dependencies": {
+    "live": "^0.1.25-beta.0",
+    "server": "^1.0.37"
   }
 }

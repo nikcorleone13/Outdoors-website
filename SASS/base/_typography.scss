@@ -1,0 +1,35 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    $color-grey-dark: #777;
+    padding: 3rem; /*Includes the white padding around the whole body on all 4 sides*/
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+    backface-visibility: hidden; /*Ill-effects after animations are done make it look bad.So it is hidden*/
+    margin: 6rem;
+
+    &--main {
+        display: block; /*span elements are inlilne elements by default and we make them block because*/
+        font-size: 6rem;/*they take the full 100% of the width*/
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+
+        animation-name: movefromLeft;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+    }
+    &--sub {
+        display: block;
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 1.5rem; /*Space out the letters to make them equal to the main heading*/
+        animation-name: movefromRight;
+        animation-duration: 2s;
+        animation-timing-function: ease-out;
+    }
+}
