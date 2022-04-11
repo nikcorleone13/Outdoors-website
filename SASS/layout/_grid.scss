@@ -1,6 +1,6 @@
 .row{
     max-width: $grid-width; 
-    background-color: #eee;
+    // background-color: #eee;
     margin: 0 auto; //to centre block elements inside a block
     margin-bottom: $gutter-vertical;
 
@@ -12,7 +12,7 @@
 
     [class^="col-"] //selecting all of the coloumns at the same time. ^ symbol is to give "starts with"
     {
-        background-color: orange;
+        // background-color: ;
         float: left;
         
         &:not(:last-child){

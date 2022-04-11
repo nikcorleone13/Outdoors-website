@@ -33,3 +33,34 @@ body {
         animation-timing-function: ease-out;
     }
 }
+
+.heading-secondary{
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    display: inline-block;
+    background-image: linear-gradient(to right , $color-primary-light, $color-primary-dark);
+    -webkit-background-clip: text; //to make the background only the areas where the text is
+    color: transparent; //text is made transparent and the gradient is visible
+    letter-spacing: 2px;
+    transition: all .2s;
+
+    &:hover{
+        transform: skewY(2deg) skewX(2deg) scale(1.1); //skews in Y-direction.Not only rotating. Can be used in both x and y direction
+        text-shadow: .5rem 1rem 2rem rgba($color-black, .2); // .5rem is x direction shadow, 1rem is y direction shadow dn 2rem is the blur
+    }
+}
+
+.heading-tertiary{
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.paragraph{
+    font-size: 1.6rem;
+
+    &:not(:last-child){
+        margin-bottom: 3rem ;
+    }
+}
