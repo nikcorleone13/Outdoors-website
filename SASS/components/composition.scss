@@ -1,0 +1,39 @@
+.composition{
+    position: relative;
+
+    &__photo{
+        width: 55%; //using images width in percentage for the responsiveness wrt viewport
+        box-shadow: 0 1.5rem 4rem rgba( $color-black, .4);
+        // border-radius: 2px;
+        position: absolute;
+        z-index: 10;
+        transition: all .2s;
+        outline-offset: 2rem; //the gap between border and image
+        
+        &--p1{
+            left: 0;
+            top: -2rem; //will move it upwards
+        }
+
+        &--p2{
+            right: 0;
+            top: 3rem; //will move it upwards
+        }
+
+        &--p3{
+            left: 20%;
+            top: 10rem; //will move it upwards
+        }
+
+        &:hover{
+            outline: 1.5rem solid $color-primary;
+            transform: scale(1.2) translateY( -.5rem); //translate is used so it goes up abit
+            box-shadow: 0 2.5rem 4rem rgba( $color-black, .5);
+            z-index: 20; //this will always be on top when hovered on it since its index is higher than the earlier one
+        }
+    }
+
+    &:hover &__photo:not(:hover){ //composition:hover composition__photo:not hovered. Selects pics not hovered
+        transform: scale(.9);
+    }
+}
