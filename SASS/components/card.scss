@@ -1,9 +1,43 @@
 .card{
-    background-color: orangered;
-    height: 50rem;
-    transition: all .5s;
+    perspective: 150rem; //less number more dramatic.so choose high number
+    -moz-perspective: 150rem;//for firefox
+    height: 50rem; //height collapses
+    position: relative;
+    
+    &__side{ //this is the default side of the card//
+        color: white;
+        font-size: 2rem;
 
-    &:hover{
+        height: 50rem;
+        transition: all .8s ease;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        backface-visibility: hidden;
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba( $color-black, .15);
+
+        &--front{
+            background-color: white;
+
+        }
+
+        &--back{
+            background-color: cyan;
+            transform: rotateY(180deg);
+
+            &--1{
+                background-image: linear-gradient( to right bottom, $color-secondary-light, $color-secondary-dark );   ;
+            }
+        }
+    }
+
+    &:hover &__side--front{ //on hover the card side will be transformed .card:hover .card__side//
         transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back{ //on hover the card side will be transformed .card:hover .card__side//
+        transform: rotateY(0);
     }
 }
