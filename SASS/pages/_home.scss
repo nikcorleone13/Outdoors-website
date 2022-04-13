@@ -3,3 +3,13 @@
     padding: 25rem 0;
     margin-top: -20vh; //vh is 95 and our clip is 75 so the differnce is 20 extra to top
 } 
+
+.section-features{
+    padding: 20rem 0;
+    background-image: linear-gradient(
+        to right bottom, /*This is to specify the direction of the gradient*/
+        rgba($color-primary-light, 0.8),/*The last parameter is the opacity of the gradient.It is lowered to show the background image also*/
+        rgba($color-primary-dark, 0.8)), 
+        url(../img/nat-4.jpg);
+        background-size: cover;
+}
