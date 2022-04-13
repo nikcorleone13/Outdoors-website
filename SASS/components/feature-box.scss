@@ -5,12 +5,19 @@
     text-align: center;
     border-radius: 3px;
     box-shadow: 0 1.5rem 4rem rgba( $color-black, .15);
+    transition: transform .3s;
     
     &__icon{
-        font-size: 6rem;
+        font-size: 7rem;
+        margin-bottom: .5rem;
+        display: inline-block;//next 4 lines are a part too
+        background-image: linear-gradient(to right , $color-primary-light, $color-primary-dark);
+        -webkit-background-clip: text; //to make the background only the areas where the text is
+        color: transparent; //text is made transparent and the gradient is visible
+
     }
 
-    &__text{
-        font-size: 1.5rem;
+    &:hover{
+        transform: translateY(-1.2rem) translateY(1.2rem) scale(1.1); //don't forget transition
     }
 }
