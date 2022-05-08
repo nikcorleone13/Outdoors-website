@@ -4,7 +4,7 @@
 }
 
 
-.btn {
+.btn{
     
     &:link, /*To make the visited link look just like unvisited*/
     &:visited {
@@ -17,7 +17,7 @@
         position: relative;
         font-size: 2rem;
     }
-    
+
     &:hover {
         transform: translateY(-3px); /*Button moves up 3px to show that it is active*/
         box-shadow: 0 1rem 2rem rgba($color-black, .2); /*0 is for x direction shadow and y is for below. 
@@ -26,33 +26,46 @@
             transform: scaleX(1.5) scaleY(1.5); /*To increase the size of the button on hover state*/ 
             opacity: 0; /*Sets to invisible*/
         }
-                                                }
+    }
+                                                
     &:active {
         transform: translateY(-1px); /*To show that the button is clicked and a slight downward action is shown*/
         box-shadow: 0 .5rem 1rem rgba($color-black , .2);
     }
+
     &--white {
-        background-color:$color-white;
-        $color-grey-dark: #777;
+        background-color:$color-primary;
+        color: $color-grey-dark;
         /***Additonal button effect.Pops out from the bottom.Optional***/
             &::after  {
                 background-color: $color-white;
             }
-        &::after  {
-        content: ""; /*Mandatory to specify the contents*/
-        display: inline-block;
-        height: 100%;
-        width: 100%;
-        border-radius: 100px;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1; /*Behind the button*/
-        transition: all .4s ;
+    }
+
+    &--green{
+        background-color: $color-primary;
+        color: $color-grey-dark;
+
+        &::after {
+            background-color: $color-primary;
+            }
+    }
+    
+
+    &::after  {
+    content: ""; /*Mandatory to specify the contents*/
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /*Behind the button*/
+    transition: all .4s ;
     }
 
 
-}
 }
 
 .btn-text{

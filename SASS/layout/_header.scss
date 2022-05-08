@@ -11,7 +11,8 @@
 
     /*To make the wedge of cutting the header we need to use the clip-path property. 
         Checkout https://bennettfeely.com/clippy/ for more shapes and figures*/
-    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*Using the vh property because if the size changes the shope remains intact*/
+    --webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%); /*Using the vh property because if the size changes the shope remains intact*/
+    clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
 
     &__logo-box {
         position: absolute;
