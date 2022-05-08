@@ -34,7 +34,7 @@
     }
 
     &--white {
-        background-color:$color-primary;
+        background-color:$color-white;
         color: $color-grey-dark;
         /***Additonal button effect.Pops out from the bottom.Optional***/
             &::after  {
@@ -44,7 +44,7 @@
 
     &--green{
         background-color: $color-primary;
-        color: $color-grey-dark;
+        color: $color-white;
 
         &::after {
             background-color: $color-primary;
