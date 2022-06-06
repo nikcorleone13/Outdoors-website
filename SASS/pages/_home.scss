@@ -26,4 +26,24 @@
     // transform: skewY(-5.5deg);
     background-color: $color-grey-light-1;
     padding: 20rem 0 15rem 0;
+    // transform: skewY(-5.5deg);
+
+    // & > *{ //Selects everything of the direct children.so "row" is the direct child//
+    //     transform: skewY(5.5deg); //selects the direct child element which is row since it is the next child
+
+    // }
+
+}
+
+.section-stories{
+    transform: skewY(-5.5deg);
+
+    & > *{ //Selects everything of the direct children.so "row" is the direct child//
+        transform: skewY(5.5deg); //selects the direct child element which is row since it is the next child
+
+    }
+     padding: 15rem 0;
+    //  background-color: $color-grey-light-1;
+     position: relative;
+
 }
