@@ -317,11 +317,26 @@
                                 <input type="email" class="form__input" placeholder="Email address" id="email" required>
                                 <label for="email" class="form__label">Email</label>
                             </div>
-                    </div>
 
-                        <div class="form__group">
-                            <div class="form__radio-group">
-                                input.
+                            <div class="form__group u-margin-bottom-medium">
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="small" name="size-specify"> <!--Name is to be mentioned because on the radio buttons if we select one button the otherone also stayed selected too. So to club them together we made
+                                    them in the same group-->
+                                    <label for="small" class="form__radio-label">
+                                        <span class="form__radio-button"></span> <!--Radio buttons cannot be styled hence we are using span and styling it-->
+                                        Small Tour Group</label>
+                                </div>
+                                
+                                <div class="form__radio-group">
+                                    <input type="radio" class="form__radio-input" id="large" name="size-specify">
+                                    <label for="large" class="form__radio-label">
+                                        <span class="form__radio-button"></span>
+                                        Large Tour Group</label>
+                                </div>
+                            </div>
+
+                            <div class="form__group">
+                                <button class="btn btn--green">Next Step &rarr;</button>
                             </div>
                         </div>
                     </form>

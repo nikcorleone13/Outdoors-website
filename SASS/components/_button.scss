@@ -5,7 +5,7 @@
 
 
 .btn{
-    
+    &,//just for button element
     &:link, /*To make the visited link look just like unvisited*/
     &:visited {
         text-transform: uppercase;
@@ -16,6 +16,10 @@
         transition: all .2s;
         position: relative;
         font-size: 2rem;
+
+        //Change for the <button> elelment
+        border: none;
+        cursor: pointer;
     }
 
     &:hover {
@@ -79,14 +83,16 @@
         transition: all .2s;
     }
 
-    &:hover{
+    &:hover
+    {
         background-color: $color-primary;
         color: $color-white;
         box-shadow: 0 1rem 2rem rgba($color-black, .15);
         transform: translateY(-2px); //to move the button 2px above while hovering
     }
 
-    &:active{
+    &:active,
+    &:focus{
         box-shadow: 0 .5rem 2rem rgba($color-black, .15);
         transform: translateY(0); //to move the button 2px above while hovering
     }
