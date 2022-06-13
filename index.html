@@ -16,6 +16,31 @@
 </head>
 
 <body>
+
+    <div class="navigation">
+        <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+
+        <label for="navi-toggle" class="navigation__button">MENU
+
+            <div class="navigation__background">
+                &nbsp;
+            </div>
+
+            <nav class="navigation__nav">
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#" class="navigation__link">About Natours</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Your Benefits</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Popular Tours</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Stories</a></li>
+                    <li class="navigation__item"><a href="#" class="navigation__link">Book Now</a></li>
+                </ul>
+            </nav>
+        </label>
+    </div>
+
+
+
+
     <header class="header">
         <div class="header__logo-box">
             <img src="img/logo-white.png" alt="logo" class="header__logo">
@@ -320,13 +345,16 @@
 
                             <div class="form__group u-margin-bottom-medium">
                                 <div class="form__radio-group">
-                                    <input type="radio" class="form__radio-input" id="small" name="size-specify"> <!--Name is to be mentioned because on the radio buttons if we select one button the otherone also stayed selected too. So to club them together we made
+                                    <input type="radio" class="form__radio-input" id="small" name="size-specify">
+                                    <!--Name is to be mentioned because on the radio buttons if we select one button the otherone also stayed selected too. So to club them together we made
                                     them in the same group-->
                                     <label for="small" class="form__radio-label">
-                                        <span class="form__radio-button"></span> <!--Radio buttons cannot be styled hence we are using span and styling it-->
-                                        Small Tour Group</label>
+                                        <span class="form__radio-button"></span>
+                                        <!--Radio buttons cannot be styled hence we are using span and styling it-->
+                                        Small Tour Group
+                                    </label>
                                 </div>
-                                
+
                                 <div class="form__radio-group">
                                     <input type="radio" class="form__radio-input" id="large" name="size-specify">
                                     <label for="large" class="form__radio-label">
@@ -338,7 +366,7 @@
                             <div class="form__group">
                                 <button class="btn btn--green">Next Step &rarr;</button>
                             </div>
-                        </div>
+                    </div>
                     </form>
                 </div>
             </div>
@@ -355,23 +383,22 @@
         <div class="row">
             <div class="col-1-of-2">
                 <div class="footer__navigation">
-                     <ul class="footer__list">
-                         <li class="footer__items"><a href="#" class="footer__link">Company</a></li>
-                         <li class="footer__items"><a href="#" class="footer__link">Contact Us</a></li>
-                         <li class="footer__items"><a href="#" class="footer__link">Careers</a></li>
-                         <li class="footer__items"><a href="#" class="footer__link">Privacy</a></li>
-                         <li class="footer__items"><a href="#" class="footer__link">Terms</a></li>
-                     </ul>
+                    <ul class="footer__list">
+                        <li class="footer__items"><a href="#" class="footer__link">Company</a></li>
+                        <li class="footer__items"><a href="#" class="footer__link">Contact Us</a></li>
+                        <li class="footer__items"><a href="#" class="footer__link">Careers</a></li>
+                        <li class="footer__items"><a href="#" class="footer__link">Privacy</a></li>
+                        <li class="footer__items"><a href="#" class="footer__link">Terms</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="col-1-of-2">
                 <p class="footer__copyright">
                     Built by Nikhil Kumar. Copyright &copy; </a>
-                        
+
                 </p>
             </div>
         </div>
-
     </footer>
 
     <!--
